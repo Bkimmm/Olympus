@@ -2,11 +2,9 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
-
-export default {
+  module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
-
   // Stop running tests after `n` failures
   // bail: 0,
 
@@ -71,9 +69,9 @@ export default {
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  // moduleDirectories: [
-  //   "node_modules"
-  // ],
+  moduleDirectories: [
+    "node_modules"
+  ],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -95,7 +93,7 @@ export default {
   notify: true,
 
   // An enum that specifies notification mode. Requires { notify: true }
-  // notifyMode: "failure-change",
+  notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
   // preset: undefined,
@@ -123,13 +121,13 @@ export default {
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "../Tests/**"
+    "./__tests__"
   ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
 
-  // The paths to modules that run some code to configure or set up the testing environment before each test
+  // The paths to modules that run some code to configure or   set up the testing environment before each test
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
@@ -151,10 +149,10 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -174,10 +172,11 @@ export default {
   // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/",
-  //   "\\.pnp\\.[^\\/]+$"
-  // ],
+  transformIgnorePatterns: [
+    "/node_modules/",
+    "\\.pnp\\.[^\\/]+$",
+    "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)",
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
